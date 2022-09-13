@@ -141,8 +141,7 @@ class Network(object):
     def cost_derivative(self, output_activations, y):
         """Return the vector of partial derivatives \partial C_x /
         \partial a for the output activations."""
-        return (output_activations-y)
-
+        return ((- y + output_activations) / (0.26 + output_activations - output_activations ** 2))
 
 # Miscellaneous functions
 def sigmoid(z):
